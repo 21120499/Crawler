@@ -1,0 +1,220 @@
+html {
+    /* font-size: 75%; */
+    font-size: 62.5%;
+    font-family: Inter, 'Source Sans Pro';
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 144rem;
+    /* width: 100%; */
+    margin: 0 0 0 18rem;
+    padding: 0;
+}
+
+.container {
+    /* box-sizing: border-box; */
+    padding: 3.9rem 7.6rem 3.822rem 2rem;
+    /* width: 100%; */
+    /* overflow: hidden; */
+    /* position: relative; */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+
+/* .container  */
+
+.page-conferences {
+    margin: 0rem 1.3rem 14.7rem 0rem;
+    font-size: 5rem;
+    color: #000000;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+
+/* ------------NAVBAR---------------------- */
+
+.container .navbar {
+    margin: 0rem 17.2rem 14.9rem 17.3rem;
+    width: calc(100% - 34.5rem);
+    height: 4.6rem;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+
+.container .navbar .short-buttonn {
+    margin: 0rem 2.6rem 0rem 0rem;
+    width: 14.5rem;
+    height: calc(100% - 0rem);
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #000000;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d9d9d9;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+
+.container .navbar .long-button {
+    margin-right: 2.6rem;
+    width: 29rem;
+    height: 100%;
+    cursor: pointer;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2125;
+    color: #000000;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d9d9d9;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+
+
+/* --------------SECTION---------------- */
+
+.list-sections {
+    margin-bottom: 9.3rem;
+}
+
+.section {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 100%;
+    align-items: flex-start;
+    background-color: #d9d9d9;
+    border-radius: 2rem;
+    /* flex-shrink: 0; */
+    cursor: pointer;
+}
+
+.section-tab {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    /* flex-direction: column; */
+    /* margin-bottom: 9.3rem; */
+    padding: 2.278rem 0% 2.278rem 3.8rem;
+    box-sizing: border-box;
+    width: 100%;
+    /* align-items: flex-start; */
+    background-color: #d9d9d9;
+    border-radius: 2rem;
+    /* flex-shrink: 0; */
+    p {
+        margin-bottom: 20px;
+    }
+    h3 {
+        margin-bottom: 25px;
+    }
+}
+
+.section-info,
+.section-deadline {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.section-info {
+    margin-right: 2%;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #000000;
+    flex-shrink: 0;
+    /* width: 70%; */
+}
+
+.section-deadline {
+    text-align: center;
+    margin-left: 2%;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #000000;
+    span {
+        font-weight: bold;
+        color: red;
+    }
+}
+
+.section .section-more {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #000000;
+    flex-shrink: 0;
+    p {
+        margin-bottom: 10px;
+        padding: 1rem 2% 1rem 4rem;
+    }
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.1s ease-out;
+}
+
+.section:hover .section-more {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #000000;
+    flex-shrink: 0;
+    p {
+        margin-bottom: 10px;
+        padding: 1rem 2% 1rem 4rem;
+    }
+    max-height: 400px;
+    overflow: auto;
+    transition: max-height 0.3s ease-in;
+}
+
+
+/* ------------------PAGINATION------------------------- */
+
+.pagination {
+    margin-left: 93.8rem;
+    height: 8.156rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.page-active {
+    width: 7.9294rem;
+    height: 100%;
+    display: flex;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #ffffff;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #2770ff;
+    border-radius: 6.117rem;
+}
+
+.page-button {
+    scale: 0.4;
+}
