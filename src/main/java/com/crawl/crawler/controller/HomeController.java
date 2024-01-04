@@ -59,7 +59,7 @@ public class HomeController {
 		if(deadlineAheads.size()==0){
 			return "nothing";
 		}
-		return "deadline";
+		return "home";
 	}
 	@GetMapping("/runningconference")
 	String runningConference(Model model){
@@ -81,22 +81,28 @@ public class HomeController {
 		if(runningConferences.size()==0){
 			return "nothing";
 		}
-		return "running";
+		return "hone";
 	}
 	@GetMapping("/detailConference/{id}")
-	public ResponseEntity<?> detailConference(@PathVariable int id){
+	public String detailConference(@PathVariable int id, Model model){
 		Optional<hoi_nghi> opHoiNghi = hoiNghiService.get_hoi_nghi(id);
-		hoi_nghi hoi_Nghi = opHoiNghi.get();	
-		return ResponseEntity.ok(hoi_Nghi);
+		hoi_nghi hoi_Nghi = opHoiNghi.get();
+		model.addAttribute("hoiNghi", hoi_Nghi);
+		return "inner";
 	}
-	@GetMapping("/dealineahead{id}")
-	public ResponseEntity<?> deadlineAhead(@PathVariable int id){
-		List<hoi_nghi> ListHoiNghi = hoiNghiService.getAllhoiNghi_deadline(id);	
-		return ResponseEntity.ok(ListHoiNghi);
+	@GetMapping("/dealineahead/{id}")
+	public String deadlineAhead(@PathVariable int id, Model model){
+		Optional<hoi_nghi> opHoiNghi = hoiNghiService.get_hoi_nghi(id);
+		hoi_nghi hoi_Nghi=opHoiNghi.get();
+		model.addAttribute("hoiNghi", hoi_Nghi);
+		return "inner";
 	}
 	@GetMapping("/runningconference/{id}")
-	public ResponseEntity<?> runningConf(@PathVariable int id){
-		return ResponseEntity.ok(hoiNghiService.getAllhoiNghi_runningConf(id)); 
+	public String runningConf(@PathVariable int id, Model model){
+		Optional<hoi_nghi> opHoiNghi = hoiNghiService.get_hoi_nghi(id);
+		hoi_nghi hoi_Nghi=opHoiNghi.get();
+		model.addAttribute("hoiNghi", hoi_Nghi);
+		return "inner";
 	}
 	
 }
