@@ -99,27 +99,28 @@ body {
 .section {
     border: 1px solid #ccc;
     box-sizing: border-box;
-    width: 100%;
+    width: 1300px;
     align-items: flex-start;
     background-color: #d9d9d9;
     border-radius: 2rem;
-    /* flex-shrink: 0; */
+    /* flex-shrink: 1; */
     cursor: pointer;
+    /* FONT */
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #000000;
 }
 
 .section-tab {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     border: 1px solid #ccc;
-    /* flex-direction: column; */
-    /* margin-bottom: 9.3rem; */
     padding: 2.278rem 0% 2.278rem 3.8rem;
     box-sizing: border-box;
-    width: 100%;
-    /* align-items: flex-start; */
-    background-color: #d9d9d9;
+    /* background-color: #d9d9d9; */
     border-radius: 2rem;
-    /* flex-shrink: 0; */
     p {
         margin-bottom: 20px;
     }
@@ -128,46 +129,29 @@ body {
     }
 }
 
-.section-info,
-.section-deadline {
-    width: 48%;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
 .section-info {
-    margin-right: 2%;
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: 1.2125;
-    color: #000000;
+    float: left;
+    width: 80%;
+    /* margin-right: 2%; */
     flex-shrink: 0;
     /* width: 70%; */
 }
 
 .section-deadline {
+    float: right;
+    width: 20%;
     text-align: center;
-    margin-left: 2%;
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: 1.2125;
-    color: #000000;
     span {
         font-weight: bold;
         color: red;
     }
 }
 
-.section .section-more {
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: 1.2125;
-    color: #000000;
+.section-more {
     flex-shrink: 0;
     p {
-        margin-bottom: 10px;
-        padding: 1rem 2% 1rem 4rem;
+        margin-bottom: 100px;
+        padding: 1rem 3% 2rem 4rem;
     }
     max-height: 0;
     overflow: hidden;
@@ -175,46 +159,12 @@ body {
 }
 
 .section:hover .section-more {
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: 1.2125;
-    color: #000000;
     flex-shrink: 0;
     p {
         margin-bottom: 10px;
-        padding: 1rem 2% 1rem 4rem;
+        padding: 1rem 3% 1rem 4rem;
     }
-    max-height: 400px;
+    max-height: 350px;
     overflow: auto;
     transition: max-height 0.3s ease-in;
-}
-
-
-/* ------------------PAGINATION------------------------- */
-
-.pagination {
-    margin-left: 93.8rem;
-    height: 8.156rem;
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.page-active {
-    width: 7.9294rem;
-    height: 100%;
-    display: flex;
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.4;
-    color: #ffffff;
-    white-space: nowrap;
-    align-items: center;
-    justify-content: center;
-    background-color: #2770ff;
-    border-radius: 6.117rem;
-}
-
-.page-button {
-    scale: 0.4;
 }

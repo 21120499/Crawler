@@ -7,7 +7,10 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,75 +18,77 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name="hoi_nghi")
+@Table(name="hoinghi")
 public class hoi_nghi {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	int id;
-	private String name;
-	private Date deadline;
-	private Date date_start;
-	private String address;
-	private String chude;
+	@Column(name="idHoiNghi")
+	String idHoiNghi;
+	@Column(name="ShortName")
+	private String ShortName;
+	@Column(name="StartDate")
+	private Date StartDate;
+	@Column(name="EndDate")
+	private Date EndDate;
+	@Column(name="Position")
+	private String Position;
+	@Column(name="WebsiteURL")
 	@Lob
-	private String link_hoi_nghi;
-	@ManyToMany
-	@JoinTable(name="dien_gia_x_hoi_nghi",
-	joinColumns = {@JoinColumn(name="id_hoi_nghi")},
-	inverseJoinColumns = {@JoinColumn(name="id_dien_gia")})
-	@JsonIgnoreProperties("hoi_nghi")
-	List<dien_gia> dien_Gia =new ArrayList<dien_gia>();
-	public int getId() {
-		return id;
+	private String WebsiteURL;
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name="HoiNghi_has_BaiBao", joinColumns = {@JoinColumn(name="HoiNghi_idHoiNghi")},
+	inverseJoinColumns = {@JoinColumn(name="BaiBao_idBaiBao")})
+	@JsonBackReference
+	List<bai_bao> listBai_Bao = new ArrayList<bai_bao>();
+	
+
+	public String getIdHoiNghi() {
+		return idHoiNghi;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setIdHoiNghi(String idHoiNghi) {
+		this.idHoiNghi = idHoiNghi;
 	}
-	public String getName() {
-		return name;
+	public String getShortName() {
+		return ShortName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setShortName(String shortName) {
+		ShortName = shortName;
 	}
-	public Date getDeadline() {
-		return deadline;
+	public Date getStartDate() {
+		return StartDate;
 	}
-	public void setDeadline(Date deadline) {
-		this.deadline = deadline;
+	public void setStartDate(Date startDate) {
+		StartDate = startDate;
 	}
-	public Date getDate_start() {
-		return date_start;
+	public Date getEndDate() {
+		return EndDate;
 	}
-	public void setDate_start(Date date_start) {
-		this.date_start = date_start;
+	public void setEndDate(Date endDate) {
+		EndDate = endDate;
 	}
-	public String getAddress() {
-		return address;
+	public String getPosition() {
+		return Position;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setPosition(String position) {
+		Position = position;
 	}
-	public String getChude() {
-		return chude;
+	public String getWebsiteURL() {
+		return WebsiteURL;
 	}
-	public void setChude(String chude) {
-		this.chude = chude;
+	public void setWebsiteURL(String websiteURL) {
+		WebsiteURL = websiteURL;
 	}
-	public String getLink_hoi_nghi() {
-		return link_hoi_nghi;
+	public List<bai_bao> getListBai_Bao() {
+		return listBai_Bao;
 	}
-	public void setLink_hoi_nghi(String link_hoi_nghi) {
-		this.link_hoi_nghi = link_hoi_nghi;
+	public void setListBai_Bao(List<bai_bao> listBai_Bao) {
+		this.listBai_Bao = listBai_Bao;
 	}
-	public List<dien_gia> getDien_Gia() {
-		return dien_Gia;
-	}
-	public void setDien_Gia(List<dien_gia> dien_Gia) {
-		this.dien_Gia = dien_Gia;
-	}
+
+
 	
 }
